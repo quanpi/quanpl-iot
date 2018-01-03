@@ -20,7 +20,7 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
-    $scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
+    $scope.CamBienMua = "Chưa thấy có thằng nào cập nhập hết";
     $scope.leds_status = [1, 1]
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
@@ -69,7 +69,7 @@ angular.module('myApp', [
 	////Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
 	mySocket.on('RAIN', function(json) {
-		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
+		$scope.CamBienMua = "ĐỘ ẨM: " + json.doam + " NHIỆT ĐỘ: " + json.nhietdo + "°C"
 	})
 	//Khi nhận được lệnh LED_STATUS
 	mySocket.on('LED_STATUS', function(json) {
