@@ -21,7 +21,7 @@ angular.module('myApp', [
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
     $scope.CamBienMua = "Chưa thấy có thằng nào cập nhập hết";
-    $scope.leds_status = []
+    $scope.leds_status = [1, 1]
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
