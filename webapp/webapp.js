@@ -98,6 +98,7 @@ angular.module('myApp', [
 	//// Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
 	mySocket.on('connect', function() {
 		console.log("connected")
+		mySocket.emit("LED_UPDATE")
 		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
 		$scope.updateServo(0) //Servo quay về góc 0 độ!. Dùng cách 2 
 	})
