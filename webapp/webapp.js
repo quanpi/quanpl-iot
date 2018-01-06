@@ -22,6 +22,7 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
     $scope.CamBienMua = "Chưa thấy có thằng nào cập nhập hết";
     $scope.leds_status = [1, 1]
+	$scope.leds_statusupdate = []
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
@@ -82,8 +83,8 @@ angular.module('myApp', [
 	
 	mySocket.on('LED_UPDATE', function(json) {
 		//Nhận được thì in ra thôi hihi.
-		console.log("recv LED", json)
-		$scope.leds_status = json.data
+		console.log("recv LED_UPDATE", json)
+		$scope.leds_statusupdate = json.data
 	})
 	//khi nhận được lệnh Button
 	mySocket.on('BUTTON', function(json) {
