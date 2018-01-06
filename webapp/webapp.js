@@ -34,7 +34,6 @@ angular.module('myApp', [
 	}
 	$scope.updateLed  = function() {
 		mySocket.emit("LED_UPDATE", $scope.leds_statusupdate)
-		$scope.changeLED()
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
@@ -44,7 +43,9 @@ angular.module('myApp', [
 		var json = {
 			"led": $scope.leds_status
 		}
+		$scope.updateLed()
 		mySocket.emit("LED", json)
+		
 	}
 	
 	//cập nhập lcd như một ông trùm 
