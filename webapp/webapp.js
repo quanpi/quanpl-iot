@@ -32,6 +32,11 @@ angular.module('myApp', [
 		mySocket.emit("RAIN")
 	}
 	$scope.updataLed  = function() {
+		console.log("Send LED_UPDATE ", $scope.leds_status)
+		
+		var json = {
+			"led": $scope.leds_status
+		}
 		mySocket.emit("LED_UPDATE", json)
 	}
 	
