@@ -93,7 +93,7 @@
 					Đèn LED thứ {{$index + 1}} đang {{led_value ? "Bật" : "Tắt"}}: 
 					<div>
 					<label class="switch">
-						<input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="updateLed()" ng-model="leds_statusupdate[$index]" />
+						<input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_statusupdate[$index]" />
 					<span class="slider round"></span>
 					</div>
 				</div>	
