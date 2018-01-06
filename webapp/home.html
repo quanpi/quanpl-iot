@@ -81,6 +81,23 @@
 					</div>
 				</div>	
 				</div>
+					
+			<!-- Cục thay đổi trạng thái LED -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">TRẠNG THÁI ĐÈN LED 2</h3>
+					<div ng-repeat="led_value in leds_status  track by $index">
+					Đèn LED thứ {{$index + 1}} đang {{led_value ? "Bật" : "Tắt"}}: 
+					<div>
+					<label class="switch">
+						<input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="updateLed()" ng-model="leds_statusupdate[$index]" />
+					<span class="slider round"></span>
+					</div>
+				</div>	
+				</div>
 			<!-- Cục cập nhập giá trị led -->
 			<div class="list-group-item list-group-item-home">
 				<div>
