@@ -32,8 +32,7 @@ angular.module('myApp', [
 		mySocket.emit("RAIN")
 	}
 	$scope.updataLed  = function() {
-		console.log("Send LED_UPDATE")
-		mySocket.emit("LED_UPDATE")
+		mySocket.emit("RAIN")
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
