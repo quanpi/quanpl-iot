@@ -22,7 +22,7 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
     $scope.CamBienMua = "Chưa thấy có thằng nào cập nhập hết";
     $scope.leds_status = [1, 1]
-	$scope.leds_statusupdate = []
+	$scope.leds_statusupdate = [1, 1]
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
@@ -32,8 +32,8 @@ angular.module('myApp', [
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
 	}
-	$scope.updataLed  = function() {
-		mySocket.emit("LED_UPDATE")
+	$scope.updateLed  = function() {
+		mySocket.emit("LED_UPDATE", $scope.leds_statusupdate)
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
