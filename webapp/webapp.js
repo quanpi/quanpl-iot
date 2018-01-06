@@ -80,6 +80,12 @@ angular.module('myApp', [
 		console.log("recv LED", json)
 		$scope.leds_status = json.data
 	})
+	
+	mySocket.on('LED_UPDATE', function(json) {
+		//Nhận được thì in ra thôi hihi.
+		console.log("recv LED", json)
+		$scope.leds_status = json.data
+	})
 	//khi nhận được lệnh Button
 	mySocket.on('BUTTON', function(json) {
 		//Nhận được thì in ra thôi hihi.
@@ -93,6 +99,7 @@ angular.module('myApp', [
 		console.log("connected")
 		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
 		mySocket.emit("LED_STATUS")
+		mySocket.emit("LED_UPDATE")
 		$scope.updateServo(0) //Servo quay về góc 0 độ!. Dùng cách 2 
 	})
 		
