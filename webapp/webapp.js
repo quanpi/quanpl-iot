@@ -34,7 +34,7 @@ angular.module('myApp', [
 	}
 	$scope.updateLed  = function() {
 		mySocket.emit("LED_UPDATE", $scope.leds_statusupdate)
-		$scope.changeLED
+		$scope.changeLED()
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
