@@ -99,6 +99,7 @@ angular.module('myApp', [
 	mySocket.on('connect', function() {
 		console.log("connected")
 		mySocket.emit("LED_UPDATE")
+		mySocket.emit("LED")
 		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
 		$scope.updateServo(0) //Servo quay về góc 0 độ!. Dùng cách 2 
 	})
